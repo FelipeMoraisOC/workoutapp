@@ -6,7 +6,7 @@ class WorkoutCardWidget extends StatelessWidget {
   final String urlImage;
   final String subtitle;
   final String duration;
-  final String exercises;
+  final int exercises;
   final String categorie;
   final String objective;
 

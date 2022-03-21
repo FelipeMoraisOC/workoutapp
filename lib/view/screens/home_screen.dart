@@ -21,7 +21,13 @@ class HomeScreen extends StatelessWidget {
               style: textTheme.headline1,
             ),
           ),
-          const WorkoutCardWidget(),
+          WorkoutCardWidget(
+            urlImage: "",
+            duration: "1 hour 30 mins",
+            categorie: "Powerbuilding",
+            objective: "Weight progression",
+            exercises: 6,
+          ),
           Padding(
             padding: const EdgeInsets.only(top: 20, bottom: 10),
             child: Text(
