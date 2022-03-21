@@ -2,7 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class WorkoutCardWidget extends StatelessWidget {
-  const WorkoutCardWidget({Key? key}) : super(key: key);
+  final String title;
+  final String urlImage;
+  final String subtitle;
+  final String duration;
+  final String exercises;
+  final String categorie;
+  final String objective;
+
+  const WorkoutCardWidget({
+    Key? key,
+    required this.title,
+    required this.urlImage,
+    required this.subtitle,
+    required this.duration,
+    required this.categorie,
+    required this.exercises,
+    required this.objective,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +61,7 @@ class WorkoutCardWidget extends StatelessWidget {
                     topRight: Radius.circular(20),
                   ),
                   child: Image.network(
-                    'https://st.depositphotos.com/1518767/5004/i/600/depositphotos_50048481-stock-photo-mid-section-of-muscular-man.jpg',
+                    urlImage,
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height * 0.25,
                     fit: BoxFit.fill,
@@ -65,10 +82,10 @@ class WorkoutCardWidget extends StatelessWidget {
                       ),
                     ),
                     alignment: const AlignmentDirectional(-0.8, 0),
-                    child: const Text(
-                      'Treino quinta-feira',
+                    child: Text(
+                      title,
                       textAlign: TextAlign.start,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -92,7 +109,7 @@ class WorkoutCardWidget extends StatelessWidget {
                       width: MediaQuery.of(context).size.width,
                       decoration: const BoxDecoration(),
                       child: Text(
-                        'Posteriores, glúteos e abdomens',
+                        subtitle,
                         textAlign: TextAlign.start,
                         style: textTheme.headline3,
                       ),
@@ -125,7 +142,7 @@ class WorkoutCardWidget extends StatelessWidget {
                                         padding: const EdgeInsetsDirectional
                                             .fromSTEB(3, 0, 0, 0),
                                         child: Text(
-                                          '1 Hora e 30 Min',
+                                          duration,
                                           style: textTheme.bodyText1,
                                         ),
                                       ),
@@ -148,7 +165,7 @@ class WorkoutCardWidget extends StatelessWidget {
                                         padding: const EdgeInsetsDirectional
                                             .fromSTEB(3, 0, 0, 0),
                                         child: Text(
-                                          'Exercícios: 6',
+                                          'Exercícios: $exercises',
                                           style: textTheme.bodyText1,
                                         ),
                                       ),
@@ -180,7 +197,7 @@ class WorkoutCardWidget extends StatelessWidget {
                                         padding: const EdgeInsetsDirectional
                                             .fromSTEB(3, 0, 0, 0),
                                         child: Text(
-                                          'Progressão de carga',
+                                          objective,
                                           style: textTheme.bodyText1,
                                         ),
                                       ),
@@ -203,7 +220,7 @@ class WorkoutCardWidget extends StatelessWidget {
                                         padding: const EdgeInsetsDirectional
                                             .fromSTEB(3, 0, 0, 0),
                                         child: Text(
-                                          'Powerbuilding',
+                                          categorie,
                                           style: textTheme.bodyText1,
                                         ),
                                       ),
